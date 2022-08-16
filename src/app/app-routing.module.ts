@@ -3,6 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { PaginationTestComponent } from './pagination-test.component';
 
 const routes: Routes = [
+  
+  {	path: '',
+	  redirectTo: 'pagination;page=2;pageSize=10',
+    pathMatch: 'full'
+  },
   { path: 'pagination', component: PaginationTestComponent },
 ];
 
