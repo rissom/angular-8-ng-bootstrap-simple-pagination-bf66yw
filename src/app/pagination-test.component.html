@@ -1,0 +1,22 @@
+<div style="margin:20px;">
+  <table>
+    <tr
+      *ngFor="
+        let item of items
+          | slice: (page - 1) * pageSize:(page - 1) * pageSize + pageSize
+      "
+    >
+      <td>{{ item.Name }}</td>
+    </tr>
+  </table>
+  <ngb-pagination
+    [collectionSize]="collectionSize"
+    [pageSize]="pageSize"
+    [(page)]="page"
+    [maxSize]="7"
+    (pageChange)="setPage($event)"
+    [rotate]="true"
+    [ellipses]="false"
+    [boundaryLinks]="true"
+  ></ngb-pagination>
+</div>
